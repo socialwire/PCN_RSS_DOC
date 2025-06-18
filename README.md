@@ -1,9 +1,10 @@
-# 連携RSS仕様書 \[2025.06.05\]
+# 連携RSS仕様書 \[2025.06.18\]
 
 <br>
 
 ## 変更履歴
 
+- 2025.06.18 : カテゴリ情報の配信に対応
 - 2025.06.05 : RSSのパラメータにgtm\_idを追加
 
 <br>
@@ -66,6 +67,22 @@ https://pcn-api.cowriter.jp/v1/rss?media={メディアID}&gtm_id={gtm_id}&limit=
 
 <br>
 
+### カテゴリ情報
+
+記事のカテゴリ情報を以下の要素で配信いたします：
+
+- channel.item.monolab:category1: 大カテゴリ名
+- channel.item.monolab:category2: 中カテゴリ名
+- channel.item.monolab:category3: 小カテゴリ名
+- channel.item.category: 標準RSS要素でのカテゴリ名
+
+**カテゴリ構造について：**
+- 3階層のカテゴリ構造を採用しています
+- category1 > category2 > category3 の順で階層が深くなります
+- カテゴリが設定されていない場合、該当要素は空になります
+
+<br>
+
 ### 新規・更新・削除
 
 - pubDate >=$00A0modDate の場合、新規記事（更新がない記事）となります
@@ -105,8 +122,12 @@ https://pcn-api.cowriter.jp/v1/rss?media={メディアID}&gtm_id={gtm_id}&limit=
 </description>
         <pubDate>Tue, 06 May 2025 15:00:00 +0000</pubDate>
         <guid isPermaLink="false">MONOLAB-65</guid>
+        <category>グルメ・食品</category>
         <monolab:eyecatchUrl>https://minio.monolab.tokyo/monolab/images/2310/319443aa-f5ab-4aec-82eb-caf9429f3476.webp</monolab:eyecatchUrl>
         <monolab:deleted>true</monolab:deleted>
+        <monolab:category1>ライフスタイル</monolab:category1>
+        <monolab:category2>食べ物・飲み物</monolab:category2>
+        <monolab:category3>グルメ・食品</monolab:category3>
         <monolab:markdown>## 『東京ばな奈 ミニオン』が東京に初上陸！期間限定でミニオンたちをゲットしよう
 
 ついに、あの**東京ばな奈 ミニオン** が東京にやってきます！$D83C$DF4C$D83C$DF4C$D83C$DF4C

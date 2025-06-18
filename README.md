@@ -24,7 +24,7 @@
 https://pcn-api.cowriter.jp/v1/rss?media={メディアID}&gtm_id={gtm_id}&limit=10&no_gtm=false
 ```
 
-`メディアID`$00A0, `gtm_id` は、連携開始時にお伝えいたします。
+`メディアID`, `gtm_id` は、連携開始時にお伝えいたします。
 
 `limit` は取得する件数となります。
 
@@ -57,10 +57,10 @@ https://pcn-api.cowriter.jp/v1/rss?media={メディアID}&gtm_id={gtm_id}&limit=
 - channel.item.pubDate: 記事公開日
 - channel.item.guid: この記事を表すユニークな値です。記事の更新、削除時にご利用ください。
 - channel.item.monolab:eyecatchUrl: この記事のアイキャッチ用画像
-- channel.item.monolab:deleted: 記事が削除されると、”true”$00A0 となりますので、貴社CMSでも削除をお願いいたします。
+- channel.item.monolab:deleted: 記事が削除されると、”true” となりますので、貴社CMSでも削除をお願いいたします。
 - channel.item.monolab:modDate: 最終更新日
 - channel.item.content:encoded: 記事の本文（HTML形式）
-- channel.item.monolab:markdown:$00A0記事の本文（マークダウン形式）
+- channel.item.monolab:markdown: 記事の本文（マークダウン形式）
 - channel.item.monolab:gtm\_id: Google Tag Manager の ID
 - channel.item.enclosure: この記事のアイキャッチ用画像（channel.item.monolab:eyecatchUrlと同じ内容が常に入ります）
 
@@ -68,8 +68,8 @@ https://pcn-api.cowriter.jp/v1/rss?media={メディアID}&gtm_id={gtm_id}&limit=
 
 ### 新規・更新・削除
 
-- pubDate >=$00A0modDate の場合、新規記事（更新がない記事）となります
-- 前回の取り込み時の modDate < 現在の$00A0modDate の場合、更新記事となります。貴社CMS上でも更新をお願いいたします。※前回の取り込み時の modDateを貴社のCMSにも保持してください。
+- pubDate >= modDate の場合、新規記事（更新がない記事）となります
+- 前回の取り込み時の modDate < 現在の modDate の場合、更新記事となります。貴社CMS上でも更新をお願いいたします。※前回の取り込み時の modDateを貴社のCMSにも保持してください。
 - deletedが true の場合、削除記事となります。貴社CMSにおいても非公開化、あるいは、削除をお願いいたします。
 
 <br>

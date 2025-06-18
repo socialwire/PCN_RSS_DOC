@@ -25,7 +25,7 @@
 https://pcn-api.cowriter.jp/v1/rss?media={メディアID}&gtm_id={gtm_id}&limit=10&no_gtm=false
 ```
 
-`メディアID`$00A0, `gtm_id` は、連携開始時にお伝えいたします。
+`メディアID`, `gtm_id` は、連携開始時にお伝えいたします。
 
 `limit` は取得する件数となります。
 
